@@ -100,8 +100,23 @@ p {
   }
 
 
+
+/**
+* AJAX Loader
+*/
+#spinner {
+  position: fixed;
+  top: 200px;
+  left: 800px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  }
+
+
+
 #login {
-  display: none;
   }
 
 

@@ -88,8 +88,17 @@ p {
       box-shadow: 0 0 4px #000000 inset;
       border-bottom: 1px solid #9a9a9a; }
 
-#login {
-  display: none; }
+/**
+* AJAX Loader
+*/
+#spinner {
+  position: fixed;
+  top: 200px;
+  left: 800px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px; }
 
 #app #menu {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117));

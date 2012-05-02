@@ -5,12 +5,17 @@
     <title>PhoneGap</title>
     <meta name="viewport" content="width=device-width, height=device-height">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="assets/js/app.js"></script>
-</head>
+    <script type="text/javascript" src="assets/js/vendor/json2.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/underscore.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/backbone.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/spin.js"></script>
+    <script type="text/javascript" src="assets/js/app/router.js"></script>
+    <script type="text/javascript" src="assets/js/app/app.js"></script>
+    <script type="text/javascript" src="assets/js/app/utils.js"></script>
 
-<body>
 
-    <div id="login">
+    <script type="text/template" id="login-template">
         <div id="logo">
             <img src="assets/img/logo.png" />
         </div>
@@ -30,9 +35,10 @@
         </form>
 
         <p>Forgot your password?</p>
-    </div>
+    </script>
 
-    <div id="app">
+
+    <script type="text/template" id="app-template">
         <div id="menu">
             <input type="button" class="smally green" value="Back" />
 
@@ -47,10 +53,12 @@
         </form>
 
         <div style="background: #fff; height: 300px;"></div>
+    </script>
 
+</head>
 
-    </div>
-
+<body>
+    <div id="content"></div>
 </body>
 
 </html>
