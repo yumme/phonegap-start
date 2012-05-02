@@ -160,5 +160,5 @@ $(document).ready(function () {
     Y.router = new Y.Router();
     Backbone.history.start();
 
-    Y.router.navigate('login');
+    Y.router.navigate('login', {trigger : true});
 });
