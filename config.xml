@@ -10,9 +10,9 @@
 		A template for getting started with PhoneGap development and build.phonegap.com
 	</description>
 
-	<author href="http://alunny.github.com"
+	<author href="http://www.yumme.se"
 		email="tech@yumme.se">
-		Andrew Lunny
+		Yumme
 	</author>
 
 	<icon src="icon.png" gap:role="default" />
