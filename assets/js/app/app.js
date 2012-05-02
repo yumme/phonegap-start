@@ -44,8 +44,33 @@ $(document).ready(function () {
         },
 
         render : function () {
-            this.$el.html(this.template());
+            this.$el.html(this.template(this.model.toJSON()));
             $('#content').html(this.el);
+        }
+    });
+
+
+
+    Y.PostCollectionView = Backbone.View.extend({
+        tagName   : 'li',
+        className : 'ugh',
+
+        events : {
+            'click' : 'edit'
+        },
+
+        initialize : function () {
+            this.template = _.template($('#post-collection-template').html());
+        },
+
+        render : function () {
+            console.log(this.model);
+            this.$el.html(this.template(this.model.toJSON()));
+            return this;
+        },
+
+        edit : function () {
+            Y.router.navigate('post/' + this.model.cid, {trigger : true});
         }
     });
 
@@ -53,18 +78,23 @@ $(document).ready(function () {
 
     Y.PostCollection = Backbone.Collection.extend({
         model : Y.Post,
+        url   : 'http://roven.json',
 
         initialize : function () {
-            console.log('ass');
-
-
+            this.on('reset', function () {
+                this.all();
+            });
         },
 
         all : function () {
+            var $el = $('<ul></ul>');
+
             _.each(this.models, function (model) {
-                var view = new Y.PostView({model : model});
-                $('body').append(view.render().el);
+                var view = new Y.PostCollectionView({model : model});
+                $el.append(view.render().el);
             });
+
+            $('#content').html($el);
         }
     });
 
@@ -74,7 +104,8 @@ $(document).ready(function () {
 
         routes : {
             'login' : 'login',
-            'home'  : 'home'
+            'home'  : 'posts',
+            'post/:id' : 'post'
         },
 
         login : function () {
@@ -83,6 +114,16 @@ $(document).ready(function () {
 
         home : function () {
             new Y.PostView();
+        },
+
+        posts : function () {
+            Y.currentCollection = new Y.PostCollection();
+            Y.currentCollection.reset(xpost);
+        },
+
+        post : function (id) {
+            var model = Y.currentCollection.getByCid(id);
+            new Y.PostView({model : model});
         }
     });
 

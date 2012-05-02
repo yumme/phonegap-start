@@ -14,6 +14,18 @@
     <script type="text/javascript" src="assets/js/app/app.js"></script>
     <script type="text/javascript" src="assets/js/app/utils.js"></script>
 
+    <script>
+        var xpost = [
+            {title : 'Beautiful day in the capital of Scand...', details : 'Posted 10 minutes ago | 7 comments', body : 'Hey, guys. I am currently enjoying the sun in...'},
+            {title : 'Just booked tickets to the upcoming...', details : 'Posted 10 minutes ago | 7 comments', body : 'I will be attending the upcoming STCC event...'}
+        ];
+    </script>
+
+    <script type="text/template" id="post-collection-template">
+        <h1><%= title %></h1>
+        <p class="details"><%= details %></p>
+        <p class="extract"><%= body %></p>
+    </script>
 
     <script type="text/template" id="login-template">
         <div id="logo">
@@ -49,10 +61,9 @@
         </div>
 
         <form>
-            <input type="text" name="header" />
+            <input type="text" name="header" value="<%= title %>" />
+            <textarea><%= body %></textarea>
         </form>
-
-        <div style="background: #fff; height: 300px;"></div>
     </script>
 
 </head>
