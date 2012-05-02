@@ -31,12 +31,21 @@ $(document).ready(function () {
     });
 
 
-    Y.Post = Backbone.Model.extend({});
+    Y.Post = Backbone.Model.extend({
+        defaults : {
+            details : ''
+        }
+    });
 
 
     Y.PostView = Backbone.View.extend({
         tagName : 'div',
         id      : 'app',
+
+        events : {
+            'click .back'   : 'back',
+            'click .update' : 'update'
+        },
 
         initialize : function () {
             this.template = _.template($('#app-template').html());
@@ -46,6 +55,19 @@ $(document).ready(function () {
         render : function () {
             this.$el.html(this.template(this.model.toJSON()));
             $('#content').html(this.el);
+        },
+
+        back : function () {
+            Y.router.navigate('post', {trigger : true});
+        },
+
+        update : function () {
+            this.model.set({
+                title : this.$el.find('form input[type="text"]').val(),
+                body  : this.$el.find('form textarea').val()
+            });
+
+            this.model.save();
         }
     });
 
@@ -78,7 +100,7 @@ $(document).ready(function () {
 
     Y.PostCollection = Backbone.Collection.extend({
         model : Y.Post,
-        url   : 'http://roven.json',
+        url   : 'http://app.yumme.se/admin/blog/',
 
         initialize : function () {
             this.on('reset', function () {
@@ -103,9 +125,10 @@ $(document).ready(function () {
     Y.Router = Backbone.Router.extend({
 
         routes : {
-            'login' : 'login',
-            'home'  : 'posts',
-            'post/:id' : 'post'
+            'login'     : 'login',
+            'home'      : 'posts',
+            'post'      : 'posts',
+            'post/:id'  : 'post'
         },
 
         login : function () {
@@ -118,7 +141,8 @@ $(document).ready(function () {
 
         posts : function () {
             Y.currentCollection = new Y.PostCollection();
-            Y.currentCollection.reset(xpost);
+            Y.currentCollection.fetch();
+            console.log(Y.currentCollection);
         },
 
         post : function (id) {
