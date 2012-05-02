@@ -1,5 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
 html {
-  background: url("../img/bg.png"); }
+  background: url("../img/bg.png");
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12pt; }
 
 #logo {
   text-align: center; }
@@ -68,6 +74,105 @@ p {
       background-image: linear-gradient(to bottom, #9dfd97, #1dac34);
       box-shadow: 0 1px white inset, 1px 0 #c0efc3 inset, 0 -1px 0 #a4ddad inset, -1px 0 #c0efc3 inset; }
     .btn.green:active {
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#6ff967), to(#07a41f));
+      /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #6ff967, #07a41f);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background-image: -moz-linear-gradient(top, #6ff967, #07a41f);
+      /* FF3.6 */
+      background-image: -ms-linear-gradient(top, #6ff967, #07a41f);
+      /* IE10 */
+      background-image: -o-linear-gradient(top, #6ff967, #07a41f);
+      /* Opera 11.10+ */
+      background-image: linear-gradient(to bottom, #6ff967, #07a41f);
+      box-shadow: 0 0 4px #000000 inset;
+      border-bottom: 1px solid #9a9a9a; }
+
+#login {
+  display: none; }
+
+#app #menu {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #fb8a26, #e86117);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #fb8a26, #e86117);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #fb8a26, #e86117);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #fb8a26, #e86117);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #fb8a26, #e86117);
+  border-top: 1px solid #fdc593;
+  border-bottom: 1px solid #b54c12;
+  box-shadow: 0 -1px 0 #fed9b7;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 20px; }
+  #app #menu span {
+    margin: 0 300px; }
+  #app #menu input:first-child {
+    float: left; }
+  #app #menu input:last-child {
+    float: right; }
+#app form {
+  margin: 0;
+  padding: 0; }
+  #app form input {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border-bottom: 1px solid #dddddd; }
+
+.smally {
+  padding: 0 20px;
+  height: 40px;
+  border: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: none;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .smally.green {
+    border: 1px solid #ff9933;
+    border-top: 1px solid #ffda99;
+    border-bottom: 1px solid #ff8533;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffa200), to(#ff6600));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #ffa200, #ff6600);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #ffa200, #ff6600);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #ffa200, #ff6600);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #ffa200, #ff6600);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(to bottom, #ffa200, #ff6600);
+    box-shadow: 0 1px 0 #bb5214; }
+    .smally.green:hover {
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#9dfd97), to(#1dac34));
+      /* Saf4+, Chrome */
+      background-image: -webkit-linear-gradient(top, #9dfd97, #1dac34);
+      /* Chrome 10+, Saf5.1+, iOS 5+ */
+      background-image: -moz-linear-gradient(top, #9dfd97, #1dac34);
+      /* FF3.6 */
+      background-image: -ms-linear-gradient(top, #9dfd97, #1dac34);
+      /* IE10 */
+      background-image: -o-linear-gradient(top, #9dfd97, #1dac34);
+      /* Opera 11.10+ */
+      background-image: linear-gradient(to bottom, #9dfd97, #1dac34);
+      box-shadow: 0 1px white inset, 1px 0 #c0efc3 inset, 0 -1px 0 #a4ddad inset, -1px 0 #c0efc3 inset; }
+    .smally.green:active {
       background-image: -webkit-gradient(linear, left top, left bottom, from(#6ff967), to(#07a41f));
       /* Saf4+, Chrome */
       background-image: -webkit-linear-gradient(top, #6ff967, #07a41f);

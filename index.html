@@ -10,28 +10,46 @@
 
 <body>
 
-    <div id="logo">
-        <img src="assets/img/logo.png" />
+    <div id="login">
+        <div id="logo">
+            <img src="assets/img/logo.png" />
+        </div>
+
+        <form>
+            <fieldset>
+                <input type="text" name="email" placeholder="Email" />
+            </fieldset>
+
+            <fieldset>
+                <input type="text" name="phone" placeholder="Password" />
+            </fieldset>
+
+            <fieldset>
+                <input type="submit" value="Login to Account" class="btn green" />
+            </fieldset>
+        </form>
+
+        <p>Forgot your password?</p>
     </div>
 
-    <form>
-        <fieldset>
-            <input type="text" name="email" placeholder="Email" />
-        </fieldset>
+    <div id="app">
+        <div id="menu">
+            <input type="button" class="smally green" value="Back" />
 
-        <fieldset>
-            <input type="text" name="phone" placeholder="Mobile" />
-        </fieldset>
+            <span>Update entry</span>
+            <input type="button" class="smally green" value="Update" />
 
-        <fieldset>
-            <input type="submit" value="Activate Account" class="btn green" />
-        </fieldset>
-    </form>
+            <div style="clear: both;"></div>
+        </div>
 
-    <p>
-        You will receive instructions via SMS and mail within a few minutes. Follow the
-        instructions to activate your account.
-    </p>
+        <form>
+            <input type="text" name="header" />
+        </form>
+
+        <div style="background: #fff; height: 300px;"></div>
+
+
+    </div>
 
 </body>
 
