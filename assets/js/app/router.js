@@ -4,8 +4,9 @@ define([
     'app/views/login',
     'app/views/home',
     'app/views/post',
+    'app/models/post',
     'app/collections/posts',
-], function (undefined, undefined, LoginView, HomeView, PostView, Posts) {
+], function (undefined, undefined, LoginView, HomeView, PostView, Post, Posts) {
 
     var Router
       , router;
@@ -21,7 +22,8 @@ define([
         routes : {
             'login'     : 'login',
             'home'      : 'home',
-            'post'      : 'posts',
+            'posts'     : 'posts',
+            'post'      : 'post',
             'post/:id'  : 'post'
         },
 
@@ -39,7 +41,14 @@ define([
         },
 
         post : function (id) {
-            var model = this.current.collection.getByCid(id);
+            var model;
+
+            if (id) {
+                model = this.current.collection.getByCid(id);
+            } else {
+                model = new Post();
+            }
+
             new PostView({model : model});
         }
 

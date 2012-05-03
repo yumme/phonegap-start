@@ -4,8 +4,9 @@ define(['app/utils', 'router'], function (utils, router) {
         id : 'home',
 
         events  : {
-            'click .warn'  : 'warn',
-            'click .posts' : 'posts'
+            'click .warn'   : 'warn',
+            'click .posts'  : 'posts',
+            'click .create' : 'create'
         },
 
         initialize : function () {
@@ -23,6 +24,10 @@ define(['app/utils', 'router'], function (utils, router) {
         },
 
         posts : function () {
+            require('router').navigate('posts', {trigger : true});
+        },
+
+        create : function () {
             require('router').navigate('post', {trigger : true});
         }
     });
