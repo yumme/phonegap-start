@@ -1,4 +1,4 @@
-define(['app/utils', 'router'], function (utils, router) {
+define(['app/utils', 'router', 'text!app/templates/login'], function (utils, router, template) {
 
     return Backbone.View.extend({
         tagName : 'div',
@@ -9,7 +9,7 @@ define(['app/utils', 'router'], function (utils, router) {
         },
 
         initialize : function () {
-            this.template = _.template($('#login-template').html());
+            this.template = _.template(template);
             this.render();
         },
 
