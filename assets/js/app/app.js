@@ -32,6 +32,8 @@ $(document).ready(function () {
 
 
     Y.Post = Backbone.Model.extend({
+        idAttribute : '_id',
+
         defaults : {
             details : ''
         }
