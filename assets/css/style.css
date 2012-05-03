@@ -124,7 +124,7 @@ ul {
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       font-weight: bold; }
 
-#app #menu {
+#menu {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117));
   /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(top, #fb8a26, #e86117);
@@ -143,23 +143,24 @@ ul {
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   padding: 20px; }
-  #app #menu span {
+  #menu span {
     margin: 0 300px; }
-  #app #menu input:first-child {
+  #menu input:first-child {
     float: left; }
-  #app #menu input:last-child {
+  #menu input:last-child {
     float: right; }
-#app form {
+
+form {
   margin: 0;
   padding: 0; }
-  #app form input {
+  form input {
     border: 0;
     margin: 0;
     width: 100%;
     height: 60px;
     outline: none;
     border-bottom: 1px solid #dddddd; }
-  #app form textarea {
+  form textarea {
     border: 0;
     margin: 0;
     width: 100%;

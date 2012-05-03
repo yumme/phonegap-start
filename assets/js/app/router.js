@@ -1,46 +1,56 @@
 define([
     'Underscore',
     'Backbone',
-    'app/views/login'
-], function (undefined, undefined, Login) {
+    'app/views/login',
+    'app/views/home',
+    'app/views/post',
+    'app/collections/posts',
+], function (undefined, undefined, LoginView, HomeView, PostView, Posts) {
 
-    var Router = Backbone.Router.extend({
+    var Router
+      , router;
+
+    Router = Backbone.Router.extend({
+
+        current : {
+            collection  : null,
+            model       : null,
+            view        : null
+        },
 
         routes : {
             'login'     : 'login',
-            'home'      : 'posts',
+            'home'      : 'home',
             'post'      : 'posts',
             'post/:id'  : 'post'
         },
 
         login : function () {
-            new Login();
+            new LoginView();
         },
 
         home : function () {
-            //new Y.PostView();
+            new HomeView();
         },
 
         posts : function () {
-            //Y.currentCollection = new Y.PostCollection();
-            //Y.currentCollection.fetch();
-            //console.log(Y.currentCollection);
+            this.current.collection = new Posts();
+            this.current.collection.fetch();
         },
 
         post : function (id) {
-            //var model = Y.currentCollection.getByCid(id);
-            //new Y.PostView({model : model});
+            var model = this.current.collection.getByCid(id);
+            new PostView({model : model});
         }
+
     });
 
-    var router = new Router();
-    Backbone.history.start();
+    router = new Router();
 
+    Backbone.history.start();
 
     router.navigate('login', {trigger : true});
 
-    return {
-        router : router
-    }
+    return router;
 
 });

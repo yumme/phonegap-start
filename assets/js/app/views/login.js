@@ -1,4 +1,4 @@
-define(['app/utils', 'main'], function (utils, router) {
+define(['app/utils', 'router'], function (utils, router) {
 
     return Backbone.View.extend({
         tagName : 'div',
@@ -9,8 +9,6 @@ define(['app/utils', 'main'], function (utils, router) {
         },
 
         initialize : function () {
-            console.log(router);
-
             this.template = _.template($('#login-template').html());
             this.render();
         },
@@ -22,8 +20,9 @@ define(['app/utils', 'main'], function (utils, router) {
 
         login : function (e) {
             e.preventDefault();
+
             utils.ajax('http://app.yumme.se/admin/', $(e.target).parents('form').serialize(), function (res) {
-                router.navigate('home', {trigger : true});
+                require('router').navigate('home', {trigger : true});
             });
         }
     });

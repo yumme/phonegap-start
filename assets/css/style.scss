@@ -144,58 +144,55 @@ ul {
   }
 
 
-#app {
-  #menu {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117)); /* Saf4+, Chrome */
-    background-image: -webkit-linear-gradient(top, #fb8a26, #e86117); /* Chrome 10+, Saf5.1+, iOS 5+ */
-    background-image:    -moz-linear-gradient(top, #fb8a26, #e86117); /* FF3.6 */
-    background-image:     -ms-linear-gradient(top, #fb8a26, #e86117); /* IE10 */
-    background-image:      -o-linear-gradient(top, #fb8a26, #e86117); /* Opera 11.10+ */
-    background-image:         linear-gradient(to bottom, #fb8a26, #e86117);
-    border-top: 1px solid #fdc593;
-    border-bottom: 1px solid #b54c12;
-    box-shadow: 0 -1px 0 #fed9b7;
-    color: #fff;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-    padding: 20px;
-    span {
-      margin: 0 300px;
-      }
-    input:first-child {
-      float: left;
-      }
-    input:last-child {
-      float: right;
-      }
+#menu {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, #fb8a26, #e86117); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, #fb8a26, #e86117); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, #fb8a26, #e86117); /* IE10 */
+  background-image:      -o-linear-gradient(top, #fb8a26, #e86117); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, #fb8a26, #e86117);
+  border-top: 1px solid #fdc593;
+  border-bottom: 1px solid #b54c12;
+  box-shadow: 0 -1px 0 #fed9b7;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  padding: 20px;
+  span {
+    margin: 0 300px;
     }
-
-  form {
-    margin: 0;
-    padding: 0;
-
-    input {
-      border: 0;
-      margin: 0;
-      width: 100%;
-      height: 60px;
-      outline: none;
-      border-bottom: 1px solid #dddddd;
-      //box-shadow: 0 3px 3px #000 inset;
-      }
-
-    textarea {
-      border: 0;
-      margin: 0;
-      width: 100%;
-      height: 300px;
-      outline: none;
-      resize: none;
-      }
+  input:first-child {
+    float: left;
     }
-
-
+  input:last-child {
+    float: right;
+    }
   }
+
+form {
+  margin: 0;
+  padding: 0;
+
+  input {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    outline: none;
+    border-bottom: 1px solid #dddddd;
+    //box-shadow: 0 3px 3px #000 inset;
+    }
+
+  textarea {
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 300px;
+    outline: none;
+    resize: none;
+    }
+  }
+
 
 
 

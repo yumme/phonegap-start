@@ -2,16 +2,12 @@ require.config({
     paths : {
         jQuery      : 'vendor/jquery',
         Underscore  : 'vendor/underscore',
-        Backbone    : 'vendor/backbone'
+        Backbone    : 'vendor/backbone',
+        router      : 'app/router'
     }
 });
 
-require(['app/utils', 'app/router'], function(utils, router) {
-
-    console.log(router);
-
-    return {
-        router : router
-    }
-
-});
+require([
+    'app/utils',
+    'router',
+], function() {});
