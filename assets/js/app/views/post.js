@@ -14,11 +14,6 @@ define(['router'], function (router) {
         },
 
         render : function () {
-            this.$el.html({
-                model   : this.template(this.model.toJSON()),
-                isNew   : this.model.isNew()
-            });
-
             this.$el.html(this.template({
                 model   : this.model.toJSON(),
                 isNew   : this.model.isNew()
