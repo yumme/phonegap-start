@@ -15,6 +15,7 @@ def test():
 def push():
   with lcd('/Users/Oscar/Sites/phonegap-start/'):
     with settings(warn_only=True):
+      local('git pull origin master')
       local('git add .')
       local('git status')
       message = raw_input('Enter a git commit message: ')
