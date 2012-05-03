@@ -1,15 +1,18 @@
-$(document).ready(function () {
+define(['jQuery', 'vendor/spin'], function () {
 
-Y.Utils = {
+    var spinner = (function () {
 
-    spinner : function () {
-        var opts = {
+        var opts
+            , target
+            , $e;
+
+        opts = {
             lines: 13, // The number of lines to draw
             length: 7, // The length of each line
             width: 4, // The line thickness
             radius: 10, // The radius of the inner circle
             rotate: 0, // The rotation offset
-            color: '#000', // #rgb or #rrggbb
+            color: '#fff', // #rgb or #rrggbb
             speed: 1, // Rounds per second
             trail: 60, // Afterglow percentage
             shadow: false, // Whether to render a shadow
@@ -20,16 +23,54 @@ Y.Utils = {
             left: 'auto' // Left position relative to parent in px
         };
 
-        var target = $('#spinner');
-        var spinner = new Spinner(opts).spin(target);
-    },
+        // Create DOM element for spinner
+        $e = $('<div id="spinner"></div>');
 
-    ajax : function () {
+        // Place spinner element in DOM
+        $('body').prepend($e);
 
+        // Position element on page
+        $e.css({
+            left : ($(document).width() - $e.width()) / 2,
+            top  : ($(document).height() - $e.height()) / 2
+        });
+
+        // Get element reference for spinner
+        target = document.querySelector('#spinner');
+
+        // Create spinner object
+        new Spinner(opts).spin(target);
+
+        // Public interface, show/hide
+        return {
+            show : function () {
+                $e.show();
+            },
+
+            hide : function () {
+                $e.hide();
+            }
+        }
+    })();
+
+
+
+    var ajax = function (url, params, callback) {
+        spinner.show();
+
+        $.post(url, params, function (res) {
+            spinner.hide();
+
+            if (callback && typeof callback === 'function') {
+                callback(res);
+            }
+        });
+    };
+
+
+
+    return {
+        spin : spinner,
+        ajax : ajax
     }
-
-};
-
-
-
 });
