@@ -3,7 +3,7 @@ define(function () {
     return Backbone.Model.extend({
         idAttribute : '_id',
 
-        url : '',
+        url : 'http://app.yumme.se/admin/blog/',
 
         defaults : {
             title   : '',
