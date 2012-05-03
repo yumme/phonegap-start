@@ -1,6 +1,6 @@
-PhoneGap-Start
+Yumme Mobile App
 ---
 
-A starting point for PhoneGap apps.
+Use the command `fab deploy` to deploy to Github.
 
-To get started: fork this repo, modify the config.xml to match your details, and get building!
+To install fabric, run the command `sudo pip install fabric`.
