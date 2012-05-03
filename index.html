@@ -104,14 +104,14 @@
             <input type="button" class="smally green back" value="Back" />
 
             <span>Update entry</span>
-            <input type="button" class="smally green update" value="Update" />
+            <input type="button" class="smally green save" value="<% if(isNew) { %>Create<% } else { %>Update<% } %>" />
 
             <div style="clear: both;"></div>
         </div>
 
         <form>
-            <input type="text" name="header" value="<%= title %>" />
-            <textarea><%= body %></textarea>
+            <input type="text" name="header" value="<%= model.title %>" />
+            <textarea><%= model.body %></textarea>
         </form>
 
         <div>

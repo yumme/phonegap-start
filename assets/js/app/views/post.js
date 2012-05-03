@@ -4,7 +4,7 @@ define(['router'], function (router) {
 
         events : {
             'click .back'   : 'back',
-            'click .update' : 'update',
+            'click .save'   : 'save',
             'click .camera' : 'camera'
         },
 
@@ -14,15 +14,24 @@ define(['router'], function (router) {
         },
 
         render : function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html({
+                model   : this.template(this.model.toJSON()),
+                isNew   : this.model.isNew()
+            });
+
+            this.$el.html(this.template({
+                model   : this.model.toJSON(),
+                isNew   : this.model.isNew()
+            }));
+
             $('#content').html(this.el);
         },
 
         back : function () {
-            require('router').navigate('post', {trigger : true});
+            require('router').navigate('posts', {trigger : true});
         },
 
-        update : function () {
+        save : function () {
             this.model.set({
                 title : this.$el.find('form input[type="text"]').val(),
                 body  : this.$el.find('form textarea').val()
