@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   }
 
 html {
@@ -49,9 +50,11 @@ form {
   }
   .left {
     float: left;
+    max-width: 12%;
     }
   .right {
     float: right;
+    max-width: 88%;
     }
   }
 

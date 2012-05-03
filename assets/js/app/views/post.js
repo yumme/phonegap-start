@@ -4,7 +4,8 @@ define(['router'], function (router) {
 
         events : {
             'click .back'   : 'back',
-            'click .update' : 'update'
+            'click .update' : 'update',
+            'click .camera' : 'camera'
         },
 
         initialize : function () {
@@ -28,6 +29,12 @@ define(['router'], function (router) {
             });
 
             this.model.save();
+        },
+
+        camera : function () {
+            navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                destinationType: Camera.DestinationType.DATA_URL
+            });
         }
     });
 

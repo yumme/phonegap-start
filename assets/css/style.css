@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  width: 100%; }
 
 html {
   background: url("../img/bg.png");
@@ -31,9 +32,11 @@ form fieldset {
     #home .profile img.border {
       border: 5px solid #fff; }
   #home .left {
-    float: left; }
+    float: left;
+    max-width: 12%; }
   #home .right {
-    float: right; }
+    float: right;
+    max-width: 88%; }
 
 .btn {
   width: 260px;
