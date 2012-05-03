@@ -1,4 +1,4 @@
-define(['app/models/post', 'app/views/posts'], function (Post, Posts) {
+define(['app/models/post', 'app/views/posts', 'app/views/post-container'], function (Post, Posts, PostContainer) {
 
     return Backbone.Collection.extend({
         model : Post,
@@ -11,14 +11,14 @@ define(['app/models/post', 'app/views/posts'], function (Post, Posts) {
         },
 
         all : function () {
-            var $el = $('<ul></ul>');
+            new PostContainer();
+
+            var $el = $('ul');
 
             _.each(this.models, function (model) {
                 var view = new Posts({model : model});
                 $el.append(view.render().el);
             });
-
-            $('#content').html($el);
         }
     });
 

@@ -9,12 +9,7 @@
     <script data-main="assets/js/main" src="assets/js/vendor/require.js"></script>
 
 
-    <script>
-        var xpost = [
-            {title : 'Beautiful day in the capital of Scand...', details : 'Posted 10 minutes ago | 7 comments', body : 'Hey, guys. I am currently enjoying the sun in...'},
-            {title : 'Just booked tickets to the upcoming...', details : 'Posted 10 minutes ago | 7 comments', body : 'I will be attending the upcoming STCC event...'}
-        ];
-    </script>
+
 
     <script type="text/template" id="home-template">
         <div id="menu">
@@ -45,6 +40,16 @@
             <li><img src="assets/img/menu-clipboard.png" />Hej</li>
             <li><img src="assets/img/menu-globe.png" class="warn" />Då</li>
         </ul>
+    </script>
+
+    <script type="text/template" id="posts-container-template">
+        <div id="menu">
+            <input type="button" class="smally green home" value="Menu" />
+            <span>Yumme</span>
+            <div style="clear: both;"></div>
+        </div>
+
+        <ul></ul>
     </script>
 
     <script type="text/template" id="post-collection-template">
