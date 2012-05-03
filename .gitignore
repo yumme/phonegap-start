@@ -1,4 +1,5 @@
 *.DS_Store
 *.scss
+*.pyc
 .sass-cache/
 .idea
