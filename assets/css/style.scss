@@ -25,10 +25,10 @@ form {
       border: 2px solid #bfbfbf;
       border-radius: 3px;
       box-shadow: 0 1px 0 #000,
-      1px 0 0 #000,
-        -1px 0 0 #000,
-        0 -1px 0 #000,
-      0 2px 0 #686868;
+                  1px 0 0 #000,
+                  -1px 0 0 #000,
+                  0 -1px 0 #000,
+                  0 2px 0 #686868;
       padding: 10px 9px;
       width: 236px;
       &:focus {
@@ -39,6 +39,21 @@ form {
   }
 
 
+#home {
+  color: #fff;
+  .profile {
+    padding: 20px;
+    img.border {
+      border: 5px solid #fff;
+      }
+  }
+  .left {
+    float: left;
+    }
+  .right {
+    float: right;
+    }
+  }
 
 
 .btn {
@@ -66,9 +81,9 @@ form {
     background-image:      -o-linear-gradient(top, #73fc6a, #05a21e); /* Opera 11.10+ */
     background-image:         linear-gradient(to bottom, #73fc6a, #05a21e);
     box-shadow: 0 1px #ffffff inset,
-    1px 0 #7cd785 inset,
-      0 -1px 0 #68c677 inset,
-      -1px 0 #7cd785 inset;
+                1px 0 #7cd785 inset,
+                0 -1px 0 #68c677 inset,
+                -1px 0 #7cd785 inset;
     &:hover {
       background-image: -webkit-gradient(linear, left top, left bottom, from(#9dfd97), to(#1dac34)); /* Saf4+, Chrome */
       background-image: -webkit-linear-gradient(top, #9dfd97, #1dac34); /* Chrome 10+, Saf5.1+, iOS 5+ */
@@ -77,9 +92,9 @@ form {
       background-image:      -o-linear-gradient(top, #9dfd97, #1dac34); /* Opera 11.10+ */
       background-image:         linear-gradient(to bottom, #9dfd97, #1dac34);
       box-shadow: 0 1px #ffffff inset,
-      1px 0 #c0efc3 inset,
-        0 -1px 0 #a4ddad inset,
-        -1px 0 #c0efc3 inset;
+                 1px 0 #c0efc3 inset,
+                 0 -1px 0 #a4ddad inset,
+                 -1px 0 #c0efc3 inset;
       }
     &:active {
       background-image: -webkit-gradient(linear, left top, left bottom, from(#6ff967), to(#07a41f)); /* Saf4+, Chrome */
@@ -92,6 +107,7 @@ form {
       border-bottom: 1px solid #9a9a9a;
       }
     }
+
   }
 
 
@@ -249,4 +265,17 @@ form {
       border-bottom: 1px solid #9a9a9a;
     }
   }
-}
+  &.light {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#ff9600)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #ffcc00, #ff9600); /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image:    -moz-linear-gradient(top, #ffcc00, #ff9600); /* FF3.6 */
+    background-image:     -ms-linear-gradient(top, #ffcc00, #ff9600); /* IE10 */
+    background-image:      -o-linear-gradient(top, #ffcc00, #ff9600); /* Opera 11.10+ */
+    background-image:         linear-gradient(to bottom, #ffcc00, #ff9600);
+    border: 1px solid #ffcf66;
+    border-top: 1px solid #fff0b3;
+    border-bottom: 1px solid #ffc166;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+  }

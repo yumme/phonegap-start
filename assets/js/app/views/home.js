@@ -1,9 +1,11 @@
 define(['app/utils', 'router'], function (utils, router) {
 
     return Backbone.View.extend({
+        id : 'home',
 
         events  : {
-            'click .profile' : 'warn'
+            'click .warn'  : 'warn',
+            'click .posts' : 'posts'
         },
 
         initialize : function () {
@@ -18,6 +20,10 @@ define(['app/utils', 'router'], function (utils, router) {
 
         warn : function () {
             alert('This feature is not yet implemented!');
+        },
+
+        posts : function () {
+            require('router').navigate('post', {trigger : true});
         }
     });
 

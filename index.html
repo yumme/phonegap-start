@@ -3,7 +3,8 @@
 
 <head>
     <title>PhoneGap</title>
-    <meta name="viewport" content="width=device-width, height=device-height">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <script data-main="assets/js/main" src="assets/js/vendor/require.js"></script>
 
@@ -17,22 +18,32 @@
 
     <script type="text/template" id="home-template">
         <div id="menu">
-            <input type="button" class="smally green profile" value="Profile" />
+            <input type="button" class="smally green warn" value="Profile" />
             <span>Yumme</span>
             <input type="button" class="smally green logout" value="Sign Out" />
             <div style="clear: both;"></div>
         </div>
 
-        <div>
-            <img src="Yoo" />
-            Olivia Lagerquist
+        <div class="profile">
+            <div>
+                <div class="left">
+                    <img src="assets/img/girl.jpg" class="border" />
+                </div>
+                <div class="right">
+                    <h1>Olivia Lagerquist</h1>
+                    <p>Racing/Motorsport</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
 
-            <input type="button" value=""/>
+            <input type="button" value="Posts" class="smally light posts" />
+            <input type="button" value="Comments" class="smally light warn" />
+            <input type="button" value="Likes" class="smally light warn" />
         </div>
 
         <ul>
-            <li>Hej</li>
-            <li>Da</li>
+            <li><img src="assets/img/menu-clipboard.png" />Hej</li>
+            <li><img src="assets/img/menu-globe.png" class="warn" />Då</li>
         </ul>
     </script>
 

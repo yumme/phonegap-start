@@ -24,6 +24,17 @@ form fieldset {
     form fieldset input[type='text']:focus, form fieldset input[type='password']:focus {
       border: 2px solid #55b5e5; }
 
+#home {
+  color: #fff; }
+  #home .profile {
+    padding: 20px; }
+    #home .profile img.border {
+      border: 5px solid #fff; }
+  #home .left {
+    float: left; }
+  #home .right {
+    float: right; }
+
 .btn {
   width: 260px;
   height: 40px;
@@ -227,3 +238,20 @@ form {
       background-image: linear-gradient(to bottom, #6ff967, #07a41f);
       box-shadow: 0 0 4px #000000 inset;
       border-bottom: 1px solid #9a9a9a; }
+  .smally.light {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffcc00), to(#ff9600));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #ffcc00, #ff9600);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #ffcc00, #ff9600);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #ffcc00, #ff9600);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #ffcc00, #ff9600);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(to bottom, #ffcc00, #ff9600);
+    border: 1px solid #ffcf66;
+    border-top: 1px solid #fff0b3;
+    border-bottom: 1px solid #ffc166;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2); }
