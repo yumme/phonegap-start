@@ -2,7 +2,7 @@ define(['app/models/post', 'app/views/posts', 'app/views/post-container'], funct
 
     return Backbone.Collection.extend({
         model : Post,
-        url   : 'http://app.yumme.se/admin/blog/',
+        url   : 'http://176.58.98.109/admin/blog/',
 
         initialize : function () {
             this.on('reset', function () {

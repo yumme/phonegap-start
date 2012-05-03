@@ -21,7 +21,7 @@ define(['app/utils'], function (utils) {
         login : function (e) {
             e.preventDefault();
 
-            utils.ajax('http://app.yumme.se/admin/', $(e.target).parents('form').serialize(), function (res) {
+            utils.ajax('http://176.58.98.109/admin/', $(e.target).parents('form').serialize(), function (res) {
                 require('router').navigate('home', {trigger : true});
             });
         }
