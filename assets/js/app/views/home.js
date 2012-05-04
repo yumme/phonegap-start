@@ -1,4 +1,4 @@
-define(['app/utils', 'router'], function (utils, router) {
+define(['app/utils', 'router', 'vendor/fittext'], function (utils, router,fittext) {
 
     return Backbone.View.extend({
         id : 'home',
@@ -17,6 +17,7 @@ define(['app/utils', 'router'], function (utils, router) {
         render : function () {
             this.$el.html(this.template());
             $('#content').html(this.el);
+            $('#content h1').fitText(0.9, {maxFontSize: '30px'});
         },
 
         warn : function () {

@@ -1,4 +1,4 @@
-define(['jQuery', 'vendor/spin'], function () {
+define(['jQuery', 'vendor/spin', 'vendor/fittext'], function () {
 
     var spinner = (function () {
 
@@ -52,7 +52,6 @@ define(['jQuery', 'vendor/spin'], function () {
             }
         }
     })();
-
 
 
     var ajax = function (url, params, callback) {
