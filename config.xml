@@ -4,7 +4,7 @@
 	id		= "com.phonegap.getting.started"
 	version 	= "1.0.0">
 
-	<name>PhoneGap: Getting Started</name>
+	<name>Yumme</name>
 
 	<description>
 		A template for getting started with PhoneGap development and build.phonegap.com
@@ -15,7 +15,7 @@
 		Yumme
 	</author>
 
-	<icon src="icon.png" gap:role="default" />
+	<icon src="yumme.png"/>
 
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
