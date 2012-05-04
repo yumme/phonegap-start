@@ -10,6 +10,10 @@ html {
   font-size: 12pt;
   }
 
+#content {
+  width: 100%;
+}
+
 #logo {
   text-align: center;
   }
@@ -42,21 +46,31 @@ form {
 
 #home {
   color: #fff;
+  width: 100%;
   .profile {
     padding: 20px;
     img.border {
       border: 5px solid #fff;
-      }
+    }
+  }
+  .icon {
+    float: left;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .left {
     float: left;
-    max-width: 12%;
-    }
+    display: block;
+    width: 50%;
+  }
   .right {
     float: right;
-    max-width: 88%;
-    }
+    display: block;
   }
+}
 
 
 .btn {
@@ -166,10 +180,10 @@ ul {
 #menu {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117)); /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(top, #fb8a26, #e86117); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #fb8a26, #e86117); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #fb8a26, #e86117); /* IE10 */
-  background-image:      -o-linear-gradient(top, #fb8a26, #e86117); /* Opera 11.10+ */
-  background-image:         linear-gradient(to bottom, #fb8a26, #e86117);
+  background-image: -moz-linear-gradient(top, #fb8a26, #e86117); /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #fb8a26, #e86117); /* IE10 */
+  background-image: -o-linear-gradient(top, #fb8a26, #e86117); /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #fb8a26, #e86117);
   border-top: 1px solid #fdc593;
   border-bottom: 1px solid #b54c12;
   box-shadow: 0 -1px 0 #fed9b7;
@@ -177,16 +191,23 @@ ul {
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   font-weight: bold;
   padding: 20px;
+  height: 25px;
+  width: 100%;
   span {
-    margin: 0 300px;
-    }
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-left: -20px;
+  }
   input:first-child {
     float: left;
-    }
-  input:last-child {
-    float: right;
-    }
   }
+  input:last-child {
+    position: absolute;
+    right: 20px;
+  }
+}
 
 form {
   margin: 0;
