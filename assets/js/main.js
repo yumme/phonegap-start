@@ -3,6 +3,7 @@ require.config({
         jQuery      : 'vendor/jquery',
         Underscore  : 'vendor/underscore',
         Backbone    : 'vendor/backbone',
+        FitText     : 'vendor/fittext',
         router      : 'app/router'
     }
 });
