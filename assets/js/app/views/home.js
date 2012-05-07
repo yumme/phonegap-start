@@ -1,12 +1,10 @@
-define(['app/utils', 'router', 'vendor/fittext'], function (utils, router,fittext) {
+define(function () {
 
     return Backbone.View.extend({
-        id : 'home',
+        id      : 'home',
 
         events  : {
-            'click .warn'   : 'warn',
-            'click .posts'  : 'posts',
-            'click .create' : 'create'
+            'click .warn'    : 'warn'
         },
 
         initialize : function () {
@@ -17,20 +15,13 @@ define(['app/utils', 'router', 'vendor/fittext'], function (utils, router,fittex
         render : function () {
             this.$el.html(this.template());
             $('#content').html(this.el);
-            $('#content h1').fitText(0.9, {maxFontSize: '30px'});
+            this.$el.find('h1').fitText(0.9, {maxFontSize: '30px'});
         },
 
         warn : function () {
             alert('This feature is not yet implemented!');
-        },
-
-        posts : function () {
-            require('router').navigate('posts', {trigger : true});
-        },
-
-        create : function () {
-            require('router').navigate('post', {trigger : true});
         }
+
     });
 
 });

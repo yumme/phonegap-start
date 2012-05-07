@@ -1,10 +1,12 @@
-define(['jQuery', 'vendor/spin', 'vendor/fittext'], function () {
+define(function() {
 
+    /**
+     * Loader script
+     */
     var spinner = (function () {
 
         var opts
-            , target
-            , $e;
+          , $e;
 
         opts = {
             lines: 13, // The number of lines to draw
@@ -23,27 +25,36 @@ define(['jQuery', 'vendor/spin', 'vendor/fittext'], function () {
             left: 'auto' // Left position relative to parent in px
         };
 
-        // Create DOM element for spinner
-        $e = $('<div id="spinner"></div>');
-
-        // Place spinner element in DOM
-        $('body').prepend($e);
-
-        // Position element on page
-        $e.css({
-            left : ($(document).width() - $e.width()) / 2,
-            top  : ($(document).height() - $e.height()) / 2
-        });
-
-        // Get element reference for spinner
-        target = document.querySelector('#spinner');
-
-        // Create spinner object
-        new Spinner(opts).spin(target);
-
-        // Public interface, show/hide
+        // Public interface
         return {
+            create : function () {
+                var target;
+
+                // Create DOM element for spinner
+                $e = $('<div id="spinner"></div>');
+
+                // Place spinner element in DOM
+                $('body').prepend($e);
+
+                // Position element on page
+                $e.css({
+                    left : ($(document).width() - $e.width()) / 2,
+                    top  : ($(document).height() - $e.height()) / 2
+                });
+
+                // Get element reference for spinner
+                target = document.querySelector('#spinner');
+
+                // Create spinner object
+                new Spinner(opts).spin(target);
+            },
+
             show : function () {
+                // Check whether element has been created
+                if (!$e) {
+                    this.create();
+                }
+
                 $e.show();
             },
 
@@ -53,7 +64,13 @@ define(['jQuery', 'vendor/spin', 'vendor/fittext'], function () {
         }
     })();
 
-
+    /**
+     * jQuery AJAX Shorthand
+     *
+     * @param url
+     * @param params
+     * @param callback
+     */
     var ajax = function (url, params, callback) {
         spinner.show();
 
@@ -65,8 +82,6 @@ define(['jQuery', 'vendor/spin', 'vendor/fittext'], function () {
             }
         });
     };
-
-
 
     return {
         spin : spinner,

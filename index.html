@@ -8,12 +8,13 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <script data-main="assets/js/main" src="assets/js/vendor/require.js"></script>
 
-
-
-
+    <script type="text/template" id="profile-template">
+        <div>HEHEHEE</div>
+    </script>
+  
     <script type="text/template" id="home-template">
         <div id="menu">
-            <input type="button" class="smally green warn" value="Profile" />
+            <a href="#profile" class="smally green">Profile</a>
             <span>Yumme</span>
             <input type="button" class="smally green logout" value="Sign Out" />
         </div>
@@ -30,22 +31,24 @@
                 <div style="clear: both;"></div>
             </div>
 
-            <input type="button" value="Posts" class="smally light posts" />
+            <a href="#posts" class="smally light">Posts</a>
             <input type="button" value="Comments" class="smally light warn" />
             <input type="button" value="Likes" class="smally light warn" />
         </div>
 
         <ul>
-            <li class="create">
-                <div class="icon">
-                    <img src="assets/img/menu-clipboard.png" />
-                </div>
-                <div class="left">
-                    <h1>Create new post</h1>
-                    <p>Write a new blog post</p>
-                </div>
-                <div style="clear: both;"></div>
-            </li>
+            <a href="#post">
+                <li>
+                    <div class="icon">
+                        <img src="assets/img/menu-clipboard.png" />
+                    </div>
+                    <div class="left">
+                        <h1>Create new post</h1>
+                        <p>Write a new blog post</p>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+            </a>
             <li>
                 <div class="icon">
                     <img src="assets/img/menu-globe.png" class="warn" />

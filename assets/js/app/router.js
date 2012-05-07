@@ -1,12 +1,11 @@
 define([
-    'Underscore',
-    'Backbone',
     'app/views/login',
     'app/views/home',
     'app/views/post',
+    'app/views/profile',
     'app/models/post',
     'app/collections/posts',
-], function (undefined, undefined, LoginView, HomeView, PostView, Post, Posts) {
+], function (LoginView, HomeView, PostView, ProfileView, Post, Posts) {
 
     var Router
       , router;
@@ -22,6 +21,7 @@ define([
         routes : {
             'login'     : 'login',
             'home'      : 'home',
+            'profile'   : 'profile',
             'posts'     : 'posts',
             'post'      : 'post',
             'post/:id'  : 'post'
@@ -36,8 +36,16 @@ define([
         },
 
         posts : function () {
-            this.current.collection = new Posts();
-            this.current.collection.fetch();
+            if (this.current.collection instanceof Posts === false) {
+                this.current.collection = new Posts();
+                this.current.collection.fetch();
+            } else {
+                this.current.collection.all();
+            }
+        },
+
+        profile : function () {
+            new ProfileView();
         },
 
         post : function (id) {

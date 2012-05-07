@@ -16,9 +16,6 @@ define(['app/utils'], function (utils) {
         render : function () {
             this.$el.html(this.template());
             $('#content').html(this.el);
-            $(document).ready(function() {
-              $('#spinner').remove();
-            });
         },
 
         login : function (e) {
