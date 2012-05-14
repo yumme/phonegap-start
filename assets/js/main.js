@@ -1,5 +1,6 @@
 require.config({
     paths : {
+        Phonegap    : 'vendor/phonegap',
         jQuery      : 'vendor/jquery',
         Underscore  : 'vendor/underscore',
         Backbone    : 'vendor/backbone',
@@ -12,6 +13,7 @@ require.config({
 });
 
 require([
+    'order!Phonegap',
     'order!jQuery',
     'order!Underscore',
     'order!Backbone',
