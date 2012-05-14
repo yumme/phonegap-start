@@ -45,22 +45,18 @@ form fieldset {
       border: 5px solid #fff; }
   #home .icon {
     float: left;
-    display: block;
     width: 100px;
     height: 100px;
-    margin-top: auto;
-    margin-bottom: auto; }
+    margin-right: 20px; }
   #home .left {
-    float: left;
-    display: block;
-    width: 50%; }
-  #home .right {
-    float: right;
-    display: block; }
+    float: left; }
+    #home .left h1 {
+      margin-bottom: 10px; }
 
 .btn {
   width: 260px;
   height: 40px;
+  line-height: 40px;
   border: 0;
   color: #fff;
   font-size: 13px;
@@ -157,6 +153,8 @@ ul {
     ul li h1 {
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       font-weight: bold; }
+  ul a {
+    text-decoration: none; }
 
 #menu {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fb8a26), to(#e86117));
@@ -176,20 +174,20 @@ ul {
   color: #fff;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  padding: 20px;
-  height: 25px;
+  height: 60px;
   width: 100%; }
   #menu span {
-    position: absolute;
     display: block;
-    width: 100%;
     text-align: center;
-    margin-left: -20px; }
-  #menu input:first-child {
-    float: left; }
-  #menu input:last-child {
+    line-height: 60px; }
+  #menu a {
     position: absolute;
-    right: 20px; }
+    top: 10px;
+    left: 10px; }
+  #menu input {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
 
 form {
   margin: 0;
@@ -210,8 +208,7 @@ form {
     resize: none; }
 
 .smally {
-  padding: 0 20px;
-  height: 40px;
+  padding: 12px 20px;
   border: 0;
   color: #fff;
   font-size: 13px;
@@ -219,6 +216,7 @@ form {
   text-shadow: none;
   cursor: pointer;
   border-radius: 4px;
+  text-decoration: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
