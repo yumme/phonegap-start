@@ -1,4 +1,4 @@
-define(function () {
+define(['vendor/mustache'], function (Mustache) {
 
     return Backbone.View.extend({
         id      : 'home',
@@ -18,7 +18,7 @@ define(function () {
         },
 
         render : function () {
-            this.$el.html(_.template($('#home-template').html(), this.model.toJSON()));
+            this.$el.html(Mustache.render($('#home-template').html(), this.model.toJSON()));
             $('#content').html(this.el);
             this.$el.find('h1').fitText(0.9, {maxFontSize: '30px'});
         },
