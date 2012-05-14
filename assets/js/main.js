@@ -27,7 +27,6 @@ require([
 
     $.ajaxSetup({
         beforeSend : function (jqXHR, settings) {
-
             if (URI(settings.url).path() === '/api/login') {
                 localStorage.setItem('email', $('input[name="email"]').val());
                 localStorage.setItem('password', $('input[name="password"]').val());

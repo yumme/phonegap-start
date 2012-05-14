@@ -35,8 +35,9 @@ define(['vendor/mustache'], function (Mustache) {
         },
 
         camera : function () {
-            navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-                destinationType : Camera.DestinationType.DATA_URL
+            navigator.camera.getPicture(onSuccess, onFail, {
+                quality: 50,
+                destinationType : navigator.camera.DestinationType.DATA_URL
             });
 
             function onSuccess(imageData) {
