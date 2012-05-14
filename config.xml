@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	id		= "com.phonegap.getting.started"
-	version 	= "1.0.0">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0"
+	id        = "com.phonegap.getting.started"
+	version   = "1.0.0">
 
 	<name>Yumme</name>
 
@@ -10,8 +9,7 @@
 		A template for getting started with PhoneGap development and build.phonegap.com
 	</description>
 
-	<author href="http://www.yumme.se"
-		email="tech@yumme.se">
+	<author href="http://www.yumme.se" email="tech@yumme.se">
 		Yumme
 	</author>
 
