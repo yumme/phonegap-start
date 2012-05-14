@@ -64,27 +64,12 @@ define(function() {
         }
     })();
 
-    /**
-     * jQuery AJAX Shorthand
-     *
-     * @param url
-     * @param params
-     * @param callback
-     */
-    var ajax = function (url, params, callback) {
+    $(document).ajaxStart(function () {
         spinner.show();
+    });
 
-        $.post(url, params, function (res) {
-            spinner.hide();
+    $(document).ajaxComplete(function () {
+        spinner.hide();
+    });
 
-            if (callback && typeof callback === 'function') {
-                callback(res);
-            }
-        });
-    };
-
-    return {
-        spin : spinner,
-        ajax : ajax
-    }
 });

@@ -8,12 +8,17 @@ define(function () {
         },
 
         initialize : function () {
-            this.template = _.template($('#home-template').html());
-            this.render();
+            var _this = this;
+
+            this.model.on('change', function () {
+                _this.render();
+            });
+
+            this.model.fetch();
         },
 
         render : function () {
-            this.$el.html(this.template());
+            this.$el.html(_.template($('#home-template').html(), this.model.toJSON()));
             $('#content').html(this.el);
             this.$el.find('h1').fitText(0.9, {maxFontSize: '30px'});
         },

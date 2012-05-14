@@ -1,4 +1,4 @@
-define(['app/utils'], function (utils) {
+define(function () {
 
     return Backbone.View.extend({
         tagName : 'div',
@@ -21,9 +21,18 @@ define(['app/utils'], function (utils) {
         login : function (e) {
             e.preventDefault();
 
-            utils.ajax('http://176.58.98.109/admin/', $(e.target).parents('form').serialize(), function (res) {
-                require('router').navigate('home', {trigger : true});
-            });
+            var url = 'http://localhost:3000/api/login';
+
+            $.post(url, $(e.target).parents('form').serialize(), function (res) {
+
+                if (res.status === 'OK') {
+                    require('router').navigate('home/' + res.id, {trigger : true});
+                } else {
+                    alert('Login failed!');
+                }
+
+            }, 'json');
+
         }
     });
 

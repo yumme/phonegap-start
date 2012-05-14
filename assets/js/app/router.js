@@ -4,8 +4,9 @@ define([
     'app/views/post',
     'app/views/profile',
     'app/models/post',
-    'app/collections/posts',
-], function (LoginView, HomeView, PostView, ProfileView, Post, Posts) {
+    'app/models/profile',
+    'app/collections/posts'
+], function (LoginView, HomeView, PostView, ProfileView, Post, Profile, Posts) {
 
     var Router
       , router;
@@ -21,6 +22,7 @@ define([
         routes : {
             'login'     : 'login',
             'home'      : 'home',
+            'home/:id'  : 'home',
             'profile'   : 'profile',
             'posts'     : 'posts',
             'post'      : 'post',
@@ -31,8 +33,13 @@ define([
             new LoginView();
         },
 
-        home : function () {
-            new HomeView();
+        home : function (id) {
+            if (id) {
+                this.current.model = new Profile({_id : id});
+                this.current.view = new HomeView({model : this.current.model});
+            } else {
+                this.current.view.render();
+            }
         },
 
         posts : function () {
