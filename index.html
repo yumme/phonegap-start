@@ -73,9 +73,9 @@
     </script>
 
     <script type="text/template" id="post-collection-template">
-        <h1><%= title %></h1>
-        <p class="details"><%= details %></p>
-        <p class="extract"><%= body %></p>
+        <h1>{{ title }}</h1>
+        <p class="details">{{ details }}</p>
+        <p class="extract">{{ body }}</p>
     </script>
 
     <script type="text/template" id="login-template">
@@ -106,13 +106,13 @@
             <input type="button" class="smally green back" value="Posts" />
 
             <span>Update entry</span>
-            <input type="button" class="smally green save" value="<% if(isNew) { %>Create<% } else { %>Update<% } %>" />
+            <input type="button" class="smally green save" value="{{ action }}" />
 
         </div>
 
         <form>
-            <input type="text" name="header" value="<%= model.title %>" />
-            <textarea><%= model.body %></textarea>
+            <input type="text" name="header" value="{{ model.title }}" />
+            <textarea>{{ model.body }}</textarea>
         </form>
 
         <div>

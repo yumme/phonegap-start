@@ -1,4 +1,4 @@
-define(['router'], function (router) {
+define(['vendor/mustache'], function (Mustache) {
 
     return Backbone.View.extend({
 
@@ -9,14 +9,13 @@ define(['router'], function (router) {
         },
 
         initialize : function () {
-            this.template = _.template($('#app-template').html());
             this.render();
         },
 
         render : function () {
-            this.$el.html(this.template({
+            this.$el.html(Mustache.render($('#app-template').html(), {
                 model   : this.model.toJSON(),
-                isNew   : this.model.isNew()
+                action  : this.model.isNew() ? 'Create' : 'Update'
             }));
 
             $('#content').html(this.el);

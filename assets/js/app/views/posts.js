@@ -1,4 +1,4 @@
-define(['router'], function (router) {
+define(['vendor/mustache'], function (Mustache) {
 
     return Backbone.View.extend({
         tagName   : 'li',
@@ -7,12 +7,10 @@ define(['router'], function (router) {
             'click' : 'edit'
         },
 
-        initialize : function () {
-            this.template = _.template($('#post-collection-template').html());
-        },
+        initialize : function () {},
 
         render : function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(Mustache.render($('#post-collection-template').html(), this.model.toJSON()));
             return this;
         },
 
