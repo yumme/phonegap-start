@@ -21,7 +21,7 @@ define(function () {
         login : function (e) {
             e.preventDefault();
 
-            var url = 'http://localhost:3000/api/login';
+            var url = 'http://176.58.98.109/api/login';
 
             $.post(url, $(e.target).parents('form').serialize(), function (res) {
 
