@@ -35,9 +35,25 @@ define(['vendor/mustache'], function (Mustache) {
         },
 
         camera : function () {
+            var pictureSource;   // picture source
+            var destinationType; // sets the format of returned value
+
+            // Wait for Cordova to connect with the device
+            //
+            document.addEventListener("deviceready",onDeviceReady,false);
+
+            // Cordova is ready to be used!
+            //
+            function onDeviceReady() {
+                pictureSource=navigator.camera.PictureSourceType;
+                destinationType=navigator.camera.DestinationType;
+
+                alert('GO GO GO !');
+            }
+
             navigator.camera.getPicture(onSuccess, onFail, {
-                quality: 50,
-                destinationType : navigator.camera.DestinationType.DATA_URL
+                quality: 20,
+                destinationType : destinationType.DATA_URL
             });
 
             function onSuccess(imageData) {
