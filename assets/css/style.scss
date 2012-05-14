@@ -79,6 +79,22 @@ form {
       margin-bottom: 10px;
     }
   }
+  .nav {
+    margin: 5px 0 20px 0;
+    text-align: center;
+    a:first-child {
+      position: absolute;
+      left: 20px;
+    }
+    a:nth-child(2) {
+      position: relative;
+      top: 11px;
+    }
+    a:last-child {
+      position: absolute;
+      right: 20px;
+    }
+  }
 }
 
 
