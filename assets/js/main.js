@@ -1,6 +1,5 @@
 require.config({
     paths : {
-        Phonegap    : 'vendor/phonegap',
         jQuery      : 'vendor/jquery',
         Underscore  : 'vendor/underscore',
         Backbone    : 'vendor/backbone',
@@ -13,7 +12,6 @@ require.config({
 });
 
 require([
-    'order!Phonegap',
     'order!jQuery',
     'order!Underscore',
     'order!Backbone',
@@ -25,6 +23,24 @@ require([
     'order!app/utils'
 ], function() {
 
-
+    $.ajaxSetup({
+        beforeSend : function (jqXHR, settings) {
+            if (URI(settings.url).path() === '/api/login') {
+                localStorage.setItem('email', $('input[name="email"]').val());
+                localStorage.setItem('password', $('input[name="password"]').val());
+            } else {
+                var auth = Base64.encode(localStorage.getItem('email') + ':' + localStorage.getItem('password'));
+                jqXHR.setRequestHeader('Authorization', 'Basic ' + auth);
+            }
+        },
+        statusCode : {
+            401 : function () {
+                alert('Not authenticated/authentication failed');
+            },
+            500 : function () {
+                alert('API endpoint error');
+            }
+        }
+    });
 
 });
