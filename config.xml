@@ -22,5 +22,4 @@
 
 	<preference name="orientation" value="portrait" />
     <preference name="android-minSdkVersion" value="7" />
-    <uses-sdk android:minSdkVersion="7" />
 </widget>
